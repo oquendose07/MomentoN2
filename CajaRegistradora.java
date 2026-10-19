@@ -46,5 +46,22 @@ public class CajaRegistradora {
 
         } while (opcionMenu != 4);
 
+        //Cálculos finales
+
+        if (totalBruto > 100000) {
+            totalBruto -= (totalBruto * 0.10);
+        }
+
+        totalBruto += (totalBruto * iva);
+
+        if (totalArticulos >= 1) {
+            porcentajePremium = ((double) totalArticulosPremium / totalArticulos) * 100;
+        }
+
+        System.out.println("----- FACTURA FINAL ----- ");
+        System.out.println("Cantidad total de productos: " + totalArticulos);
+        System.out.println("Total a pagar (con IVA y descuentos): $" + totalBruto);
+        System.out.println("Porcentaje de artículos Premium: " + porcentajePremium + "%");
+
     }
 }
